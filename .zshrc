@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,6 +112,7 @@ alias xcca="sh ~/.dotfiles/.xcode-clean.sh -a" # clear archive
 alias mp="make project" # make TT project
 alias mmp="(cd ~/Projects/TT/iphone-trading-app && make project)"
 alias mmpu="(cd ~/Projects/TT/iphone-trading-app && make project-update)"
+alias vim="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -124,3 +125,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH=~/Library/python/3.9/bin:$PATH
+export PATH=~/Library/python/3.10/bin:$PATH

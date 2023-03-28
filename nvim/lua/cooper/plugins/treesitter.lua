@@ -16,15 +16,19 @@ treesitter.setup({
 	autotag = { enable = true },
 	-- ensure these language parsers are installed
 	ensure_installed = {
+		"json",
+		"javascript",
+		"css",
+		"html",
 		"yaml",
 		"markdown",
 		-- "svelte",
 		"bash",
 		"lua",
 		"vim",
-        "ruby",
-		-- "dockerfile",
-		-- "gitignore",
+		"ruby",
+		"dockerfile",
+		"gitignore",
 	},
 	-- auto install above language parsers
 	auto_install = true,
