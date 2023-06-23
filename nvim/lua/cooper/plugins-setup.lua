@@ -128,6 +128,9 @@ return packer.startup(function(use)
 	--       "neovim/nvim-lspconfig"
 	--   },
 	-- }
+	--
+	-- Used for platformio vim easier support
+	use("normen/vim-pio")
 
 	if packer_bootstrap then
 		require("packer").sync()
