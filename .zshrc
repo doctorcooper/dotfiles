@@ -123,8 +123,8 @@ source /Users/cooper/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # rbenv Initialization
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PATH=~/Library/python/3.9/bin:$PATH
+. ~/.asdf/plugins/java/set-java-home.zsh
+# #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH=~/Library/python/3.10/bin:$PATH
