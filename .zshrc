@@ -73,12 +73,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Editor for extra things
+export EDITOR='nvim'
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting asdf)
+plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,22 +112,28 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias xccd="sh ~/.dotfiles/.xcode-clean.sh -d" # clear derived data
 alias xcca="sh ~/.dotfiles/.xcode-clean.sh -a" # clear archive
-alias mp="make project" # make TT project
-alias mmp="(cd ~/Projects/TT/iphone-trading-app && make project)"
-alias mmpu="(cd ~/Projects/TT/iphone-trading-app && make project-update)"
+# alias mp="make project" # make TT project
+# alias mmp="(cd ~/Projects/TT/iphone-trading-app && make project)"
+# alias mmpu="(cd ~/Projects/TT/iphone-trading-app && make project-update)"
 alias vim="nvim"
 alias cls="clear; printf '\e[3J'"
+alias mp="( cd ~/Projects/surf/burgerking && make project )" 
+alias pron1="networksetup -setsecurewebproxystate wi-fi on"
+alias prof1="networksetup -setsecurewebproxystate wi-fi off"
+alias pron="sh ~/.dotfiles/proxy-on.sh"
+alias prof="sh ~/.dotfiles/proxy-off.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /Users/cooper/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
 # rbenv Initialization
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-. ~/.asdf/plugins/java/set-java-home.zsh
 # #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 # export SDKMAN_DIR="$HOME/.sdkman"
 # [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PATH=~/Library/python/3.10/bin:$PATH
+
+# pyenv Initialization
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
